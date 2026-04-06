@@ -1,4 +1,4 @@
-# AI
+# AI Models
 
 <p align="right"><a href="../README.md#-table-of-contents">← Back to main list</a></p>
 
