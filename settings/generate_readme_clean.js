@@ -156,29 +156,116 @@ function writeRootReadme(categoryCounts) {
     const totalCount = categoryCounts.reduce((sum, category) => sum + category.count, 0);
     const today = new Date().toISOString().split('T')[0];
 
-    let content = `# Agentic AI APIs\n\n`;
-    content += `The ultimate collection of APIs for building autonomous AI agents - ${totalCount.toLocaleString()} production-ready APIs across Agents, AI Models, and MCP Servers. Stop wasting weeks building infrastructure. Plug these in and ship your agent today.\n\n`;
-    content += `<a id="table-of-contents"></a>\n\n`;
-    content += `## Collection Stats\n\n`;
+    let content = `<div align="center">\n\n`;
+    content += `<img src="./assets/readme-hero.svg" alt="Agentic AI APIs hero banner" width="100%" />\n\n`;
+    content += `<br />\n<br />\n\n`;
+    content += `[![GitHub stars](https://img.shields.io/github/stars/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/stargazers)\n`;
+    content += `[![GitHub forks](https://img.shields.io/github/forks/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/network/members)\n`;
+    content += `[![Last commit](https://img.shields.io/github/last-commit/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/commits/main)\n`;
+    content += `[![Repo size](https://img.shields.io/github/repo-size/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis)\n\n`;
+    content += `<p>\n`;
+    content += `  <a href="#at-a-glance"><strong>At A Glance</strong></a>\n`;
+    content += `  |\n`;
+    content += `  <a href="#start-here"><strong>Start Here</strong></a>\n`;
+    content += `  |\n`;
+    content += `  <a href="#explore-the-stack"><strong>Explore The Stack</strong></a>\n`;
+    content += `  |\n`;
+    content += `  <a href="#why-this-repo-wins"><strong>Why This Repo Wins</strong></a>\n`;
+    content += `  |\n`;
+    content += `  <a href="#star-history"><strong>Star History</strong></a>\n`;
+    content += `</p>\n\n`;
+    content += `</div>\n\n`;
+
+    content += `## At A Glance\n\n`;
+    content += `> The ultimate collection of APIs for building autonomous AI agents - **${totalCount.toLocaleString()} production-ready APIs** across **Agents**, **AI Models**, and **MCP Servers**.\n\n`;
+    content += `This repository is designed to feel like a launchpad, not a junk drawer. It is tightly scoped around the API layers that matter most when you are building autonomous systems, copilots, tool-using assistants, and MCP-native workflows.\n\n`;
     content += `| Metric | Count |\n`;
     content += `|--------|-------|\n`;
     content += `| Total APIs | ${totalCount.toLocaleString()} |\n`;
     content += `| Categories | ${categoryCounts.length} |\n`;
-    content += `| Last Updated | ${today} |\n\n`;
-    content += `## Included Categories\n\n`;
+    content += `| Last Updated | ${today} |\n`;
+    content += `| Focus | Agentic AI infrastructure |\n\n`;
+    content += `<table>\n`;
+    content += `  <tr>\n`;
+    content += `    <td width="33%" valign="top">\n`;
+    content += `      <h3>Agents</h3>\n`;
+    content += `      <p><strong>${categoryCounts[0].count.toLocaleString()} APIs</strong></p>\n`;
+    content += `      <p>Execution layers, orchestration, autonomous task handling, and agent-style workflows.</p>\n`;
+    content += `      <p><a href="./${categoryCounts[0].folderName}/"><strong>Open Agents Directory</strong></a></p>\n`;
+    content += `    </td>\n`;
+    content += `    <td width="33%" valign="top">\n`;
+    content += `      <h3>AI Models</h3>\n`;
+    content += `      <p><strong>${categoryCounts[1].count.toLocaleString()} APIs</strong></p>\n`;
+    content += `      <p>Generation, reasoning, extraction, transformation, and model-powered product building blocks.</p>\n`;
+    content += `      <p><a href="./${categoryCounts[1].folderName}/"><strong>Open AI Models Directory</strong></a></p>\n`;
+    content += `    </td>\n`;
+    content += `    <td width="33%" valign="top">\n`;
+    content += `      <h3>MCP Servers</h3>\n`;
+    content += `      <p><strong>${categoryCounts[2].count.toLocaleString()} APIs</strong></p>\n`;
+    content += `      <p>Model Context Protocol integrations that connect assistants to real tools, systems, and data.</p>\n`;
+    content += `      <p><a href="./${categoryCounts[2].folderName}/"><strong>Open MCP Servers Directory</strong></a></p>\n`;
+    content += `    </td>\n`;
+    content += `  </tr>\n`;
+    content += `</table>\n\n`;
 
-    for (const category of categoryCounts) {
-        content += `- [${category.displayName}](./${category.folderName}/) - ${category.count.toLocaleString()} APIs\n`;
-    }
+    content += `## Start Here\n\n`;
+    content += `1. Pick the layer you need first: \`Agents\`, \`AI Models\`, or \`MCP Servers\`.\n`;
+    content += `2. Open that category README and scan the API names and descriptions.\n`;
+    content += `3. Click through to the provider page for implementation details, pricing, and docs.\n`;
+    content += `4. Build your shortlist fast instead of wasting hours digging through irrelevant categories.\n\n`;
 
-    content += `\n## Scope\n\n`;
-    content += `This repository is intentionally focused on the APIs most useful for autonomous AI agent workflows:\n\n`;
-    content += `- Agents for agentic execution, orchestration, and autonomous task handling\n`;
-    content += `- AI Models for generation, reasoning, extraction, and model-powered workflows\n`;
-    content += `- MCP Servers for tool access through the Model Context Protocol\n\n`;
-    content += `Everything outside those three categories has been removed from the tracked repository structure.\n\n`;
-    content += `## Notes\n\n`;
-    content += `- The generation scripts in [settings](./settings/) rebuild only these three categories.\n`;
+    content += `## Explore The Stack\n\n`;
+    content += `<details open>\n<summary><strong>Agents</strong></summary>\n\n`;
+    content += `Best for builders who need APIs that feel closer to execution and autonomy:\n\n`;
+    content += `- agent workflows\n- orchestration layers\n- autonomous task completion\n- assistant behavior and action loops\n\n`;
+    content += `[Browse Agents APIs](./${categoryCounts[0].folderName}/)\n\n`;
+    content += `</details>\n\n`;
+    content += `<details>\n<summary><strong>AI Models</strong></summary>\n\n`;
+    content += `Best for builders who need intelligence and generation as a reusable service layer:\n\n`;
+    content += `- reasoning and inference\n- summarization and extraction\n- content generation\n- analysis and transformation\n\n`;
+    content += `[Browse AI Models APIs](./${categoryCounts[1].folderName}/)\n\n`;
+    content += `</details>\n\n`;
+    content += `<details>\n<summary><strong>MCP Servers</strong></summary>\n\n`;
+    content += `Best for builders who want agents to use tools through structured interfaces:\n\n`;
+    content += `- MCP-native tool integrations\n- external system connectivity\n- docs, search, analytics, scheduling, and developer workflows\n- assistants that need real-world actions\n\n`;
+    content += `[Browse MCP Servers APIs](./${categoryCounts[2].folderName}/)\n\n`;
+    content += `</details>\n\n`;
+
+    content += `## Built For\n\n`;
+    content += `<table>\n`;
+    content += `  <tr>\n`;
+    content += `    <td width="25%" align="center"><strong>Autonomous Assistants</strong></td>\n`;
+    content += `    <td width="25%" align="center"><strong>AI Copilots</strong></td>\n`;
+    content += `    <td width="25%" align="center"><strong>MCP Toolchains</strong></td>\n`;
+    content += `    <td width="25%" align="center"><strong>Internal Automation</strong></td>\n`;
+    content += `  </tr>\n`;
+    content += `  <tr>\n`;
+    content += `    <td width="25%" align="center"><strong>Research Agents</strong></td>\n`;
+    content += `    <td width="25%" align="center"><strong>Workflow Engines</strong></td>\n`;
+    content += `    <td width="25%" align="center"><strong>Tool-Using LLM Apps</strong></td>\n`;
+    content += `    <td width="25%" align="center"><strong>Production AI Features</strong></td>\n`;
+    content += `  </tr>\n`;
+    content += `</table>\n\n`;
+
+    content += `## Why This Repo Wins\n\n`;
+    content += `- It is opinionated. This repo is not trying to be every API category on earth.\n`;
+    content += `- It is agent-native. Everything revolves around the stack needed for autonomous AI systems.\n`;
+    content += `- It is faster to use. The clutter is gone, so discovery is dramatically easier.\n`;
+    content += `- It is better positioned. The repo name, README, and categories now all tell the same story.\n\n`;
+
+    content += `## Scope Guarantee\n\n`;
+    content += `This repository intentionally includes only:\n\n`;
+    content += `- **Agents** for execution, orchestration, planning, and autonomous workflows\n`;
+    content += `- **AI Models** for inference, generation, analysis, and reasoning\n`;
+    content += `- **MCP Servers** for exposing tools and systems to AI assistants through MCP\n\n`;
+    content += `Anything outside those three categories has been removed from the tracked repository structure.\n\n`;
+
+    content += `## Star History\n\n`;
+    content += `[![Star History Chart](https://api.star-history.com/svg?repos=cporter202/agentic-ai-apis&type=Date)](https://www.star-history.com/#cporter202/agentic-ai-apis&Date)\n\n`;
+
+    content += `## Maintenance Notes\n\n`;
+    content += `- The generation scripts in [settings](./settings/) are configured to rebuild only the three tracked categories above.\n`;
+    content += `- The visual README layout is now part of the repo's default presentation, not just a temporary pass.\n`;
     content += `- API links keep the existing affiliate tracking from the upstream source data.\n`;
 
     fs.writeFileSync(path.join(ROOT_DIR, 'README.md'), content, 'utf-8');
