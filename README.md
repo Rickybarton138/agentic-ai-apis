@@ -26,36 +26,36 @@
 
 ## At A Glance
 
-> The ultimate collection of APIs for building autonomous AI agents - **2,036 production-ready APIs** across **Agents**, **AI Models**, and **MCP Servers**.
+> The ultimate collection of APIs for building autonomous AI agents - **1,180 production-ready APIs** across **Agents**, **AI Models**, and **MCP Servers**.
 
 This repository is designed to feel like a launchpad, not a junk drawer. It is tightly scoped around the API layers that matter most when you are building autonomous systems, copilots, tool-using assistants, and MCP-native workflows.
 
 | Metric | Count |
 |--------|-------|
-| Total APIs | 2,036 |
+| Total APIs | 1,180 |
 | Categories | 3 |
-| Last Updated | 2026-04-06 |
+| Last Updated | 2026-04-07 |
 | Focus | Agentic AI infrastructure |
 
 <table>
   <tr>
     <td width="33%" valign="top">
       <h3>Agents</h3>
-      <p><strong>697 APIs</strong></p>
+      <p><strong>0 APIs</strong></p>
       <p>Execution layers, orchestration, autonomous task handling, and agent-style workflows.</p>
-      <p><a href="./agents-apis-697/"><strong>Open Agents Directory</strong></a></p>
+      <p><a href="./agents-apis-0/"><strong>Open Agents Directory</strong></a></p>
     </td>
     <td width="33%" valign="top">
       <h3>AI Models</h3>
-      <p><strong>1,208 APIs</strong></p>
+      <p><strong>1,180 APIs</strong></p>
       <p>Generation, reasoning, extraction, transformation, and model-powered product building blocks.</p>
-      <p><a href="./ai-apis-1208/"><strong>Open AI Models Directory</strong></a></p>
+      <p><a href="./ai-models-apis-1180/"><strong>Open AI Models Directory</strong></a></p>
     </td>
     <td width="33%" valign="top">
       <h3>MCP Servers</h3>
-      <p><strong>131 APIs</strong></p>
+      <p><strong>0 APIs</strong></p>
       <p>Model Context Protocol integrations that connect assistants to real tools, systems, and data.</p>
-      <p><a href="./mcp-servers-apis-131/"><strong>Open MCP Servers Directory</strong></a></p>
+      <p><a href="./mcp-servers-apis-0/"><strong>Open MCP Servers Directory</strong></a></p>
     </td>
   </tr>
 </table>
@@ -79,7 +79,7 @@ Best for builders who need APIs that feel closer to execution and autonomy:
 - autonomous task completion
 - assistant behavior and action loops
 
-[Browse Agents APIs](./agents-apis-697/)
+[Browse Agents APIs](./agents-apis-0/)
 
 </details>
 
@@ -93,7 +93,7 @@ Best for builders who need intelligence and generation as a reusable service lay
 - content generation
 - analysis and transformation
 
-[Browse AI Models APIs](./ai-apis-1208/)
+[Browse AI Models APIs](./ai-models-apis-1180/)
 
 </details>
 
@@ -107,7 +107,7 @@ Best for builders who want agents to use tools through structured interfaces:
 - docs, search, analytics, scheduling, and developer workflows
 - assistants that need real-world actions
 
-[Browse MCP Servers APIs](./mcp-servers-apis-131/)
+[Browse MCP Servers APIs](./mcp-servers-apis-0/)
 
 </details>
 
@@ -152,5 +152,6 @@ Anything outside those three categories has been removed from the tracked reposi
 ## Maintenance Notes
 
 - A GitHub Actions workflow now syncs the Apify catalog daily and commits only when upstream data actually changes.
-- The generation scripts in [`settings`](./settings/) are configured to rebuild only the three tracked categories above.
+- The generation scripts in [settings](./settings/) are configured to rebuild only the three tracked categories above.
 - The visual README layout is now part of the repo's default presentation, not just a temporary pass.
+- API links keep the existing affiliate tracking from the upstream source data.
