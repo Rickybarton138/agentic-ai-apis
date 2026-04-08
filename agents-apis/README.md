@@ -2,7 +2,7 @@
 
 <p align="right"><a href="../README.md#table-of-contents">Back to main list</a></p>
 
-**550 APIs in this category**
+**552 APIs in this category**
 
 | API Name | Description |
 |----------|-------------|
@@ -106,6 +106,7 @@
 | [AllRecipes Scraper](https://apify.com/fingolfin/allrecipies-scraper?fpr=p2hrc6) | n Apify Actor that scrapes recipe information from AllRecipes.com, including recipe search and detailed recipe data with ingredients, directions, nutrition facts, and reviews. |
 | [Almosafer Estatedetails Spider](https://apify.com/getdataforme/almosafer-estatedetails-spider?fpr=p2hrc6) | Apify actor that scrapes comprehensive estate and activity details from Almosafer, extracting names, descriptions, locations, pricing, and availability.... |
 | [Alouermtl Product Url Parser Spider](https://apify.com/getdataforme/alouermtl-product-url-parser-spider?fpr=p2hrc6) | This Apify Actor scrapes detailed rental data from Alouermtl listings, extracting property details, pricing, availability, and media.... |
+| [AlphaSignal — Crypto Futures Screener](https://apify.com/ayrtondavoli97/kucoin-scraper?fpr=p2hrc6) | Advanced multi-timeframe screener for crypto perpetual futures. Generates LONG/SHORT signals with 7-signal confluence scoring, ATR-based TP/SL, support/resistance levels and market structure. No API... |
 | [Amazon Deals Scraper with Smart Ranking](https://apify.com/amazonscraping/amazon-deals-scraper?fpr=p2hrc6) | Scrape top-performing products from Amazon bestsellers across multiple countries and categories, based on rating, review count, price, and bestseller status to help you identify trending deals.  Key... |
 | [Apamanshop Product Details Script](https://apify.com/hello.datawizards/apamanshop-product-details-script?fpr=p2hrc6) | The Commercialrealestate Url Script Apify Actor extracts detailed real-estate listing data from property URLs, including pricing, layout, images, features, agent info, and contract details. It... |
 | [Apify Actor Insta Event Sheriff](https://apify.com/convincing_yesterday/apify-actor-insta-event-sheriff?fpr=p2hrc6) | 🚀 Specialized in Instagram Event Analysis. High-speed scraping with Internal Caching to save costs. Smart fake account detection & Follow-checks." |
@@ -432,6 +433,7 @@
 | [Scrape entry-level IT jobs in India](https://apify.com/codexdhanush/scrape-entry-level-it-jobs-in-india?fpr=p2hrc6) | Scrape entry-level IT jobs in India from LinkedIn and major ATS boards (Greenhouse, Lever, Workday, SmartRecruiters, etc.). Filter by recency, location, and job type. Outputs clean JSON to dataset and... |
 | [Search Keyword Research](https://apify.com/powerai/search-keyword-research?fpr=p2hrc6) | Analyze search volume, cost, and competitiveness of keywords to optimize your SEO and advertising strategies with detailed research reports in HTML and PDF. |
 | [SEC Edgar Intelligence](https://apify.com/funnyvalentine69/sec-edgar-intelligence?fpr=p2hrc6) | AI-powered natural language queries against SEC EDGAR. Search filings by company, form type, or topic. Returns structured filing data with AI-synthesized analysis. Runs as actor or MCP server for AI... |
+| [Second Brain Builder — Karpathy's LLM Wiki, Automated](https://apify.com/openclawai/second-brain-builder?fpr=p2hrc6) | Transform web content into an organized Obsidian-compatible knowledge base with AI-powered compilation. Scrapes any website and generates a Second Brain structure with wikilinks. |
 | [Seeking Alpha Stock Analysis Scraper](https://apify.com/fortuitous_pirate/seekingalpha-stock-analysis-scraper?fpr=p2hrc6) | Scrape Seeking Alpha stock analysis articles by ticker or keyword. Extract author ratings, publish dates, summaries, and investment insights. Filter by analysis type (analysis, news, earnings). Get... |
 | [Sentiment and Topics Text Classifier](https://apify.com/lofomachines/sentiment-and-topics-text-classifier?fpr=p2hrc6) | Super Fast - Classify texts using AI. Paste texts in bulk, define your labels, Sentiment, and get classified results as a dataset. Use it to make text classifications on Tweets, Reviews, and more. |
 | [Sentinel One](https://apify.com/fiery_dream/sentinel-one?fpr=p2hrc6) | A powerful AI agent that monitors government contracts, business acquisitions, distress signals, and regulatory changes across 10+ data sources. Find opportunities before your competitors. |
