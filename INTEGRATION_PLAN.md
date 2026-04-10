@@ -143,14 +143,15 @@ AI-powered personal training for Kim. Flutter + Supabase + Claude. **ACTIVE PROJ
 **Next action:** Prototype meal tracking in Flutter — upload photo → Food Calorie Analyzer → display macros.
 
 ### coach-mentor (`~/coach-mentor`)
-FA Coaching Education Platform. **FA DEMO FRIDAY 11 APR** — two days away.
+FA Coaching Education Platform. FA demo completed.
 
 | Agent | Integration point | Purpose |
 |---|---|---|
-| **Learning Plan Coach (AI)** (`apify.com/macheta/learning-plan-coach`) | Personalised curriculum engine | Generate FA coaching learning pathways with milestones and daily tasks |
 | **Academic Paper Scraper** (`apify.com/labrat011/academic-paper-scraper`) | RAG knowledge base expansion | Pull sports-science papers from Semantic Scholar + arXiv to extend the 585-chunk RAG |
 
-**Next action:** FA demo is imminent — hold off integrating until after Friday. Shortlist for week of 14 Apr.
+> **Learning Plan Coach dropped:** `macheta/learning-plan-coach` is deprecated on Apify. Curriculum generation will instead be built in-house with the existing Claude API using the expanded RAG — better architecture and no third-party dependency for the pedagogical core.
+
+**Next action:** Set `APIFY_TOKEN` in `server/.env`, run `node scripts/ingest-apify-papers.js --batch` to ingest 8 preset coaching-science topics. Validate retrieval via coach chat. See `~/coach-mentor/tasks/agentic-integrations.md` for full runbook.
 
 ---
 
