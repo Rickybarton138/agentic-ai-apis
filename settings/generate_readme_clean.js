@@ -224,10 +224,10 @@ function writeRootReadme(categoryCounts) {
     let content = `<div align="center">\n\n`;
     content += `<img src="./assets/readme-hero-v2.svg" alt="agentic-ai-apis hero banner" width="100%" />\n\n`;
     content += `<br />\n<br />\n\n`;
-    content += `[![GitHub stars](https://img.shields.io/github/stars/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/stargazers)\n`;
-    content += `[![GitHub forks](https://img.shields.io/github/forks/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/network/members)\n`;
-    content += `[![Last commit](https://img.shields.io/github/last-commit/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/commits/main)\n`;
-    content += `[![Repo size](https://img.shields.io/github/repo-size/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis)\n\n`;
+    content += `[![GitHub stars](https://img.shields.io/github/stars/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis/stargazers)\n`;
+    content += `[![GitHub forks](https://img.shields.io/github/forks/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis/network/members)\n`;
+    content += `[![Last commit](https://img.shields.io/github/last-commit/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis/commits/main)\n`;
+    content += `[![Repo size](https://img.shields.io/github/repo-size/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis)\n\n`;
     content += `<p>\n`;
     content += `  <a href="#at-a-glance"><strong>At A Glance</strong></a>\n`;
     content += `  |\n`;
@@ -326,7 +326,7 @@ function writeRootReadme(categoryCounts) {
     content += `Anything outside those three categories has been removed from the tracked repository structure.\n\n`;
 
     content += `## Star History\n\n`;
-    content += `[![Star History Chart](https://api.star-history.com/svg?repos=cporter202/agentic-ai-apis&type=Date)](https://www.star-history.com/#cporter202/agentic-ai-apis&Date)\n\n`;
+    content += `[![Star History Chart](https://api.star-history.com/svg?repos=Rickybarton138/agentic-ai-apis&type=Date)](https://www.star-history.com/#Rickybarton138/agentic-ai-apis&Date)\n\n`;
 
     content += `## Maintenance Notes\n\n`;
     content += `- A GitHub Actions workflow now syncs the Apify catalog daily and commits only when upstream data actually changes.\n`;

@@ -5,10 +5,10 @@
 <br />
 <br />
 
-[![GitHub stars](https://img.shields.io/github/stars/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/network/members)
-[![Last commit](https://img.shields.io/github/last-commit/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis/commits/main)
-[![Repo size](https://img.shields.io/github/repo-size/cporter202/agentic-ai-apis?style=for-the-badge)](https://github.com/cporter202/agentic-ai-apis)
+[![GitHub stars](https://img.shields.io/github/stars/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis/network/members)
+[![Last commit](https://img.shields.io/github/last-commit/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis/commits/main)
+[![Repo size](https://img.shields.io/github/repo-size/Rickybarton138/agentic-ai-apis?style=for-the-badge)](https://github.com/Rickybarton138/agentic-ai-apis)
 
 <p>
   <a href="#at-a-glance"><strong>At A Glance</strong></a>
@@ -147,7 +147,7 @@ Anything outside those three categories has been removed from the tracked reposi
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=cporter202/agentic-ai-apis&type=Date)](https://www.star-history.com/#cporter202/agentic-ai-apis&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Rickybarton138/agentic-ai-apis&type=Date)](https://www.star-history.com/#Rickybarton138/agentic-ai-apis&Date)
 
 ## Maintenance Notes
 
