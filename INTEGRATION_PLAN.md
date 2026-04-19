@@ -102,7 +102,7 @@ Portfolio + multi-brand social + AI video ad agent.
 | **Meta Ad Library Scraper** (`apify.com/agenscrape/facebook-ad-library-scraper`) | Competitive intel | Ad-copy inspiration from competitor ads |
 | **AI Brand Visibility** (covered in P0) | Cross-brand dashboard | Track AI mention share per brand |
 
-**Next action:** Replace current video generation with YouTube Autopilot in one test ad, benchmark against current HeyGen+ElevenLabs pipeline.
+**Next action:** ~~Replace current video generation with YouTube Autopilot in one test ad.~~ **BLOCKED (2026-04-14):** YouTube Autopilot actor (`wedo_software~wedo-ai-video`) is broken — maintainer's Google Cloud service account credentials have expired (`invalid_grant: Invalid JWT Signature`). Test run `pmH0i5xNZcmwZIi20` charged $1.90 but produced no video. Refund requested. Consider `powerai/veo3-video-generator` as alternative, or keep HeyGen as primary pipeline until the actor is fixed.
 
 ---
 
