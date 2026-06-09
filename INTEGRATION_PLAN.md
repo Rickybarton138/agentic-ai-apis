@@ -1,15 +1,15 @@
 # Integration Plan — Agentic AI APIs × Ricky's Portfolio
 
-This document maps the highest-leverage Apify actors from this catalog onto each active project in Ricky's stack, with exact integration points, credentials needed, and priority levels. Skip dream442 — owner's request.
+This document maps the highest-leverage Apify actors from this catalogue onto each active project in Ricky's stack, with exact integration points, credentials needed, and priority levels. Skip dream442 — owner's request.
 
-> **Prerequisite for everything below:** Apify MCP is not yet in the super stack. Add it once and every actor in this catalog becomes callable from Claude Code, n8n, and all agent projects.
+> **Prerequisite for everything below: DONE (2026-06-09).** Apify MCP is now in the super stack — every actor in this catalog is callable from Claude Code.
 >
-> - **Apify MCP endpoint:** `https://mcp.apify.com`
-> - **Token:** create at https://console.apify.com/settings/integrations
-> - **Add via CLI:** `claude mcp add apify -- npx -y @apify/actors-mcp-server --token=<APIFY_TOKEN>`
+> - **Registered at user scope:** `claude mcp add apify -s user -- npx -y @apify/actors-mcp-server --tools actors,docs --token=<APIFY_TOKEN>`
+> - **Token:** stored in `coach-mentor/server/.env`; validated against `https://api.apify.com/v2/users/me` (account: Ricky Barton). Manage/rotate at https://console.apify.com/settings/integrations
+> - **Note:** a stale token-less user-scope entry (`--tools actors,docs`, OAuth-only) was removed during reconciliation — it was the cause of the server hanging on "connecting".
 > - **Alternate (HTTP):** register `https://mcp.apify.com` with the token as an Authorization header
 >
-> Once connected, every actor below can be invoked by name without wrapping code.
+> First connection requires an npx cold download, so the very first `claude mcp list` probe may show "Failed to connect" — it connects once the package is cached.
 
 ---
 
@@ -102,7 +102,7 @@ Portfolio + multi-brand social + AI video ad agent.
 | **Meta Ad Library Scraper** (`apify.com/agenscrape/facebook-ad-library-scraper`) | Competitive intel | Ad-copy inspiration from competitor ads |
 | **AI Brand Visibility** (covered in P0) | Cross-brand dashboard | Track AI mention share per brand |
 
-**Next action:** ~~Replace current video generation with YouTube Autopilot in one test ad.~~ **BLOCKED (2026-04-14):** YouTube Autopilot actor (`wedo_software~wedo-ai-video`) is broken — maintainer's Google Cloud service account credentials have expired (`invalid_grant: Invalid JWT Signature`). Test run `pmH0i5xNZcmwZIi20` charged $1.90 but produced no video. Refund requested. Consider `powerai/veo3-video-generator` as alternative, or keep HeyGen as primary pipeline until the actor is fixed.
+**Next action:** ~~Replace current video generation with YouTube Autopilot in one test ad.~~ **DEAD ACTOR (confirmed 2026-06-09):** YouTube Autopilot actor (`wedo_software~wedo-ai-video`) has been **pulled from the Apify store** — the API now returns `record-or-token-not-found` ("Actor was not found or access denied"). This is no longer a transient cred bug (earlier `invalid_grant: Invalid JWT Signature`, test run `pmH0i5xNZcmwZIi20` charged $1.90 for no video, refund requested) — the actor is gone. **Do not plan around it.** Replacement confirmed: **`powerai/veo3-video-generator`** is live, public, non-deprecated, 925+ runs, last run 2026-06-09 (verified via API). Use Veo3 as the AI video engine, keep HeyGen+ElevenLabs as the primary pipeline.
 
 ---
 
@@ -138,7 +138,8 @@ AI-powered personal training for Kim. Flutter + Supabase + Claude. **ACTIVE PROJ
 | **Food Calorie Analyzer** (`apify.com/saadithya/food-calorie-analyzer`) | Meal tracking feature | Computer vision on meal photos → calories + macros |
 | **Food Ingredient Analyzer** (`apify.com/saadithya/food-ingredient-analyzer`) | Shopping/label scanner | Photo of ingredient label → additives, allergens, healthiness score |
 | **Health & Fitness Intelligence AI** (`apify.com/visita/health-fitness-intelligence`) | Content/programme feed | Structured wellness data (ingredients, body parts, gear) |
-| **Learning Plan Coach (AI)** (`apify.com/macheta/learning-plan-coach`) | Training programme generator | Adapt study-plan pattern to training-plan generation with milestones |
+
+> **Learning Plan Coach dropped here too:** `macheta/learning-plan-coach` is deprecated on Apify (same as coach-mentor). The training-programme generator will be built in-house with the existing Claude API — no third-party dependency for the core training logic.
 
 **Next action:** Prototype meal tracking in Flutter — upload photo → Food Calorie Analyzer → display macros.
 
@@ -152,6 +153,18 @@ FA Coaching Education Platform. FA demo completed.
 > **Learning Plan Coach dropped:** `macheta/learning-plan-coach` is deprecated on Apify. Curriculum generation will instead be built in-house with the existing Claude API using the expanded RAG — better architecture and no third-party dependency for the pedagogical core.
 
 **Next action:** Set `APIFY_TOKEN` in `server/.env`, run `node scripts/ingest-apify-papers.js --batch` to ingest 8 preset coaching-science topics. Validate retrieval via coach chat. See `~/coach-mentor/tasks/agentic-integrations.md` for full runbook.
+
+### plotsense (`~/plotsense`)
+AI-native UK land-sourcing + planning-permission probability SaaS. Beachhead Dorset/BCP/New Forest. Next.js + Supabase + LightGBM + Claude. **Scaffolded 2026-04-19.** Highest-leverage actor fit in the whole catalogue — UK gov data is its core input.
+
+| Agent | Integration point | Purpose |
+|---|---|---|
+| **UK Government Data API** (`apify.com/lentic_clockss/uk-data-search`) | Core data pipeline — planning-probability features | 31 UK gov sources including **planning applications**, Charity Commission, ICO register, tribunal decisions. Feeds the LightGBM planning-probability model with real historical application/outcome data |
+| **Business Entity Search** (`apify.com/openactor/business-entity-search`) | Landowner / vendor resolution | UK Companies House-grade profiles — resolve who owns a plot's freehold when it's company-held |
+| **Company Risk Intelligence Report** (`apify.com/openactor/company-risk-intelligence-report`) | Vendor due-diligence module | Registry + sanctions + court + news risk scoring on landowning entities before outreach |
+| **Funding Intel** (`apify.com/fiery_dream/funding-intel`) | Opportunity/grant signal | Tracks 14+ UK gov data sources — surface grants, local-plan changes, and regulatory shifts that move planning probability |
+
+**Next action:** Wire `uk-data-search` planning-application pull into the feature pipeline for the Dorset/BCP/New Forest beachhead; backfill historical applications + decisions as LightGBM training labels. This is the data moat — do it before any more model work.
 
 ---
 
@@ -185,19 +198,37 @@ FA Coaching Education Platform. FA demo completed.
 - AI Brand Visibility from P0
 - Advanced Social Media Agent from rick-ai stack
 
+### player-scout (`~/player-scout`) — **SPIKE COMPLETE**
+Personal VTFC recruitment tool: public-data aggregator + "why now" leads. Personal-tool-only (polite crawl, no SaaS).
+- **Sports Intelligence Autopilot** (`apify.com/actor_researcher.48/sports-intelligence-autopilot`) — 38 leagues incl. Soccer; real stats to enrich scouted-player profiles (shares the actor with football-analyzer + vtfc-coaching)
+- Keep it personal-scope: no scheduled production crons, manual runs only — respects the project's polite-crawl constraint
+
+### removals-academy (`~/removals-academy`) — **SCAFFOLDED 2026-05-22**
+BAR Level 2 video training suite. Astra-internal first, multi-tenant SaaS-ready. Mux + HeyGen/ElevenLabs + Claude.
+- **Video Script Generator** (`apify.com/powerai/video-script-generator`) — draft lesson scripts before HeyGen/ElevenLabs handoff
+- **Video Dubbing & Translation** (`apify.com/zhanji/video-dubbing-translation`) — multilingual crew training once multi-tenant (reuse from rick-ai stack)
+- **Veo3 Video Generator** (`apify.com/powerai/veo3-video-generator`) — short b-roll/demo clips (same engine that replaced the dead YouTube Autopilot)
+
+### magna-park-crm (`~/magna-park-crm`) — **PHASE 1 — INFRA UNDERWAY**
+CRM + booking for Magna Park Self Storage. Next.js + Supabase + Stripe.
+- **Lead Enrichment MCP Server** — reuse from primehaul-leads to enrich inbound storage enquiries
+- **Comments Analyzer Agent** + **AI Brand Visibility** (P0) — share the magna-park reputation/visibility stack
+- **Google Maps Scraper + AI Lead Gen** — local Bournemouth storage-demand prospecting
+
 ---
 
 ## Recommended implementation order
 
-1. **Apify MCP connection** — one-time prerequisite, unlocks everything
+1. ~~**Apify MCP connection**~~ — **DONE (2026-06-09):** added at user scope with token (`claude mcp add apify -s user -- npx -y @apify/actors-mcp-server --tools actors,docs --token=…`). Token validated against the Apify API. Every actor below is now callable.
 2. **Enterprise MCP Gateway** — second most leverage, feeds 5+ projects
 3. **primehaul-leads: Google Maps + AI Lead Gen** — direct revenue impact, LIVE project
 4. **astra-removals: SEO/AEO/GEO Auditor** — quick win, establishes baseline
 5. **transport-manager: ReguAction** — core compliance engine, unblocks main product
-6. **rick-ai: YouTube Autopilot** — replaces expensive part of video pipeline
-7. **ai-trainer: Food Calorie Analyzer** — visible feature for Kim
-8. **Cross-cutting: AI Brand Visibility** weekly scheduled run across all brands
-9. Everything else opportunistically
+6. **plotsense: UK Government Data API** — the data moat; planning-application history feeds the probability model
+7. **rick-ai: Veo3 Video Generator** — replaces the (now-dead) YouTube Autopilot for the AI video engine
+8. **ai-trainer: Food Calorie Analyzer** — visible feature for Kim
+9. **Cross-cutting: AI Brand Visibility** weekly scheduled run across all brands
+10. Everything else opportunistically
 
 ---
 
@@ -206,7 +237,7 @@ FA Coaching Education Platform. FA demo completed.
 Apify actors typically run on pay-per-event or consumption pricing. Budget guidance:
 - **Low cost (<$5/mo):** most generators, text processors, keyword tools
 - **Medium cost ($5–50/mo):** scrapers with moderate volume (Google Maps, LinkedIn, lead gen)
-- **Variable cost:** video generation (Veo3, YouTube Autopilot) — check per-run pricing before production use
+- **Variable cost:** video generation (Veo3) — check per-run pricing before production use
 
 Set per-actor monthly caps in the Apify console before wiring any actor into a production cron job.
 
